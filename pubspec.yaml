@@ -4,3 +4,6 @@ dependencies:
   browser: any
   http: any
   vector_math: any
+dev_dependencies:
+  runtime:
+    path: ../../../web_runtime

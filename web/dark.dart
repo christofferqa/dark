@@ -801,7 +801,12 @@ void updateAnimations(double passedTime) {
 double time = 0.0;
 void requestAnimationFrame() {
   if (crashed) return;
-  window.animationFrame.then((time)=>topLevelCatch(()=>render(time)));
+  Stopwatch w = new Stopwatch()..start();
+  new Timer.periodic(const Duration(seconds: 5), (Timer t) {
+    double time = w.elapsedMilliseconds.toDouble();
+    topLevelCatch(() => render(time));
+  });
+  // window.animationFrame.then((time)=>topLevelCatch(()=>render(time)));
 }
 
 double lastTime = -1.0;
