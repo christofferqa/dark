@@ -253,7 +253,7 @@ class FloorRaiseTrigger extends LinedefTrigger {
   }
   
   void triggerOnSector(Sector sector, Wall wall, bool rightSide) {
-    sector.effect = new FloorRaiseEffect(this);
+    throw new Exception("Unreachable"); // sector.effect = new FloorRaiseEffect(this);
   }
 }
 
